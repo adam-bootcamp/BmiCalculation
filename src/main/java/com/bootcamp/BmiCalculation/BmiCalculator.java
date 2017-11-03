@@ -10,7 +10,7 @@ public class BmiCalculator {
         double bmi = 0;
 
         if (heightInMeters > 0 && weightInKgs > 0) {
-            bmi = round(weightInKgs / (heightInMeters * heightInMeters));
+            bmi = roundToTwoDecimal(weightInKgs / (heightInMeters * heightInMeters));
         }
 
         return bmi;
@@ -54,7 +54,7 @@ public class BmiCalculator {
         // }
     }
 
-    private double round(double number) {
+    private double roundToTwoDecimal(double number) {
         DecimalFormat twoDForm = new DecimalFormat("#.##");
         return Double.valueOf(twoDForm.format(number));
     }
